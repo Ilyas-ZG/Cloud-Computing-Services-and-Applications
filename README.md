@@ -85,3 +85,6 @@ MariaDB
 Redis
 LDAP (autenticación de usuarios)
 Replicación de, al menos, uno de los microservicios anteriores (Servidor web, LDAP o MariaDB).  
+![diagrama](https://github.com/Ilyas-ZG/Cloud-Computing-Services-and-Applications/assets/116302871/4599dce1-1872-4137-974d-39372a77859c)  
+
+
