@@ -85,6 +85,18 @@ MariaDB
 Redis
 LDAP (autenticación de usuarios)
 Replicación de, al menos, uno de los microservicios anteriores (Servidor web, LDAP o MariaDB).  
-![diagrama](https://github.com/Ilyas-ZG/Cloud-Computing-Services-and-Applications/assets/116302871/4599dce1-1872-4137-974d-39372a77859c)  
+![diagrama](https://github.com/Ilyas-ZG/Cloud-Computing-Services-and-Applications/assets/116302871/4599dce1-1872-4137-974d-39372a77859c)   
+
+Vamos a utilizar los mismos servicios que hemos utilizado anteriormente, pero esta vez con una duplicación del servidor OwnCloud. En este caso, tendremos ocserver1 y ocserver2, para dividir la carga y controlar el balance mediante HAProxy. El archivo que hemos agregado se puede ver a continuación.  
+![image](https://github.com/Ilyas-ZG/Cloud-Computing-Services-and-Applications/assets/116302871/e4eade60-d82f-441d-8d24-5cdd29dae79d)  
+
+Accedemos a http://localhost:8404/ tenemos la siguiente figura:  
+![hproxy](https://github.com/Ilyas-ZG/Cloud-Computing-Services-and-Applications/assets/116302871/2f6c7330-5008-4af7-b02f-f2acbcc2392d)  
+A continuación podemos ver todos los servicios levantados incluyendo lo de mariadb master y esclavo.  
+![docker desktop senario 2](https://github.com/Ilyas-ZG/Cloud-Computing-Services-and-Applications/assets/116302871/9a412349-02e9-48c0-a78d-e3dcf01faa3b)  
+
+
+
+
 
 
