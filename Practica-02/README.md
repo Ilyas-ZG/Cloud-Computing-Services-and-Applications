@@ -1,3 +1,4 @@
+# Implementing face recognition using Functions-as-a-Service
 ## El objetivo de la practica:
 El objetivo de esta práctica es desplegar y implementar funciones de reconocimiento facial utilizando Functions-as-a-Service (FaaS) con OpenFaaS y Kubernetes. Esta función debe ser capaz de recibir una imagen como entrada, detectar los rostros presentes en la imagen y devolver la imagen con los rostros detectados enmarcados en un rectángulo.  
 
