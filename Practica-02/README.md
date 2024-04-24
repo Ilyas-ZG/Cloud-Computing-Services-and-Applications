@@ -62,5 +62,60 @@ The `kubectl port-forward` command securely forwards a connection to the OpenFaa
 
 The `faas-cli` login command and preceding line populate the PASSWORD environment variable. You can use this to get the password to open the UI at any time
 
+
 Con estos pasos, hemos logrado instalar y configurar OpenFaaS en nuestro clúster Kubernetes. Después de esto, podemos desplegar y controlar funciones sin servidor, y eso es lo que haremos en el siguiente paso  
+
+Con este comando, podemos acceder a todas las funciones que tienen relación con la face 
+~~~
+faas-cli store list | grep face
+~~~
+![image](https://github.com/Ilyas-ZG/Cloud-Computing-Services-and-Applications/assets/116302871/e75404e5-d26f-443d-9f0a-f0b0b686c28e)  
+
+Lo que vamos a usar son face-detect-pigo y face-detect-openvc. Podemos ver sus detalles ejecutando el siguiente comando:  
+~~~
+faas-cli store inspect face-detect-pigo 
+y  
+faas-cli store inspect face-detect-openvc
+~~~ 
+Aquí está el resultado, que es una descripción del funcionamiento de cada función.  
+  
+![inspect face-detect-opencv](https://github.com/Ilyas-ZG/Cloud-Computing-Services-and-Applications/assets/116302871/2d8e67fd-58ba-4083-8d3f-94f06af27441)  
+
+![inspect face-detect-opencv](https://github.com/Ilyas-ZG/Cloud-Computing-Services-and-Applications/assets/116302871/41f76538-594a-4964-aa5f-5536395cb04f)  
+  
+
+Para implementar estas funciones, se utilizan los siguientes comandos:
+~~~
+faas-cli store deploy face-detect-pigo
+y
+faas-cli store deploy face-detect-picv
+~~~
+
+![face-detect functions in openfaas](https://github.com/Ilyas-ZG/Cloud-Computing-Services-and-Applications/assets/116302871/ce8267ee-66ca-47ff-ab43-46e9ead5958e)
+
+Ahora, para invocar las funciones, necesitamos estos comandos:  
+~~~
+curl -d https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCdio_Sf9aON6NjLHo5fXjG1HNZzWCaTsUjQ http://127.0.0.1:8080/function/face-detect-pigo -o face-detect-pigo.png
+
+curl -d https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCdio_Sf9aON6NjLHo5fXjG1HNZzWCaTsUjQ http://127.0.0.1:8080/function/face-detect-opencv -o face-detect-opencv.png
+~~~
+  
+Se pasa el enlace de la foto que se desea usar, la URL de nuestra función y el nombre del archivo de salida, que en este caso son  face-detect-pigo.png y face-detect-opencv.png.
+
+
+
+![test-opencv](https://github.com/Ilyas-ZG/Cloud-Computing-Services-and-Applications/assets/116302871/da0d8b75-366f-444b-a000-f0d614f1a296)  
+
+  face-detect-pigo.png    
+
+    
+![test-pigo](https://github.com/Ilyas-ZG/Cloud-Computing-Services-and-Applications/assets/116302871/2b94cc6b-a36e-49f7-8791-1439816c425c)  
+
+face-detect-opencv.png.  
+
+
+
+
+
+
 
