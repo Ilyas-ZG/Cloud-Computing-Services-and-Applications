@@ -5,7 +5,7 @@ El objetivo de esta práctica es desplegar y implementar funciones de reconocimi
 ## Los requisitos  de práctica:   
 Instala minikube ([ver sesión 4](https://github.com/pnovoa/cc2324/blob/main/session4/README.md#Kubernetes)).  
 Instala [arkade](https://github.com/alexellis/arkade).  
-Instala OpenFaaS en Kubernetes usando arkade.   
+Instala [OpenFaaS en Kubernetes](https://github.com/pnovoa/cc2324/blob/main/session7/README.md) usando arkade.   
 
 ## Pasos para implementar las funciones disponibles de OpenFaas:
 Para hacerlo, debemos seguir los siguientes pasos y ejecutar los comandos en Git Bash abierto como administrador  
