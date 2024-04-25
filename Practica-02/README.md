@@ -1,6 +1,6 @@
 # Implementing face recognition using Functions-as-a-Service
 ## El objetivo de la practica:
-El objetivo de esta práctica es desplegar y implementar funciones de reconocimiento facial utilizando Functions-as-a-Service (FaaS) con OpenFaaS y Kubernetes. Esta función debe ser capaz de recibir una imagen como entrada, detectar los rostros presentes en la imagen y devolver la imagen con los rostros detectados enmarcados en un rectángulo.  
+El objetivo de esta práctica es desplegar y implementar funciones de reconocimiento facial utilizando Functions-as-a-Service (FaaS) con OpenFaaS y Kubernetes. Esta función debe ser capaz de recibir una imagen como entrada, detectar los rostros presentes en la imagen y devolver la imagen con los rostros detectados enmarcados en un rectángulo. Para ver la descripción, haga clic [aquí](https://github.com/pnovoa/cc2324/blob/main/practice2/REAME.md).
 
 ## Los requisitos  de práctica:   
 Instala minikube ([ver sesión 4](https://github.com/pnovoa/cc2324/blob/main/session4/README.md#Kubernetes)).  
@@ -113,9 +113,32 @@ Se pasa el enlace de la foto que se desea usar, la URL de nuestra función y el 
 
 face-detect-opencv.png.  
 
+## Desarrollar nuestra propias funcione de face-detection para FaaS: 
 
+En nuestro caso, utilizaremos el lenguaje Python por su facilidad. Para hacerlo, usamos este comando 
+~~~
+ $ faas-cli new --lang python ilyas-facesdetection-python
+~~~
 
+ Esto nos crea 3 archivos que son :  
+`ilyas-facesdetection-python/handler.py`: Este archivo contiene el código de la función que implemontamos en OpenFaaS.  
 
+`ilyas-facesdetection-python/requirements.txt`: Este archivo especifica las dependencias de Python necesarias para ejecutar la función.  
 
+`ilyas-facesdetection-python.yml`: Este archivo es el archivo de configuración específico para la función ilyas-facesdetection-python.  
+
+La función de detección de faces se encuentra en el archivo handler.py  
+
+Para compilar, enviar y implementar esta función, se utiliza el siguiente comando:  
+~~~
+$ faas-cli up -f ilyas-facesdetection-python.yml
+~~~
+Después de un tiempo, veremos nuestra imagen enviada a Docker Hub, como se muestra en la siguiente figura.
+
+![docker hub](https://github.com/Ilyas-ZG/Cloud-Computing-Services-and-Applications/assets/116302871/1fcbd7f0-ddc9-459a-85be-a7183b721c3b)  
+
+tambien la podemos ver en  `http://127.0.0.1:8080/ui/`  
+
+![ilyas-facedetec openfaasss](https://github.com/Ilyas-ZG/Cloud-Computing-Services-and-Applications/assets/116302871/b44980b5-d20c-49e8-bdb4-ea3a7dfcf533)
 
 
