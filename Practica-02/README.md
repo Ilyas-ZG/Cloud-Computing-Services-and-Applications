@@ -141,9 +141,7 @@ tambien la podemos ver en  `http://127.0.0.1:8080/ui/`
 
 ![ilyas-facedetec openfaasss](https://github.com/Ilyas-ZG/Cloud-Computing-Services-and-Applications/assets/116302871/b44980b5-d20c-49e8-bdb4-ea3a7dfcf533)    
 
-y abajo la el resultado final:  
 
-![faces-detected](https://github.com/Ilyas-ZG/Cloud-Computing-Services-and-Applications/assets/116302871/05371aec-f223-412c-a2ae-e64d837e118e)
 
 
 
